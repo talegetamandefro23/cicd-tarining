@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="be7f3ca4-6b60-4b67-85ee-36ea39412b3f" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="cicd-trainingFlow" doc:id="144c2e59-7a5a-4836-bbe9-d771aa2bac18" >
+		<http:listener doc:name="Listener" doc:id="d0894037-8c28-4021-ba2e-a1944b6e9d96" config-ref="HTTP_Listener_config" path="/cicd"/>
+		<set-variable value="10" doc:name="Set Variable" doc:id="c832ea74-29e0-4452-b323-f888f680a933" variableName="A"/>
+		<set-variable value="23" doc:name="Set Variable" doc:id="81923b86-0aef-4946-9409-c62299dca1d9" variableName="B"/>
+		<ee:transform doc:name="Transform Message" doc:id="a0cdf762-fc2b-4d87-9a65-2f9382879fbb" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+var A = vars.A as Number
+var B = vars.B as Number
+---
+"The sum of " ++ A as String ++ " and " ++ B as String ++ " is " ++ (A + B) as String
+]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+	</flow>
+</mule>
