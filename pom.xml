@@ -41,11 +41,11 @@
 						<environment>${environment}</environment>
 						<target>${targetName}</target>
 						<muleVersion>${muleVersion}</muleVersion>
-						<username>${user}</username>
-						<password>${pass}</password>
+						<username>${username}</username>
+						<password>${password}</password>
 						<applicationName>${appName}</applicationName>
 						<replicas>1</replicas>
-						<vCores>1</vCores>
+						<vCores>0.1</vCores>
 						<deploymentSettings>
 							<http>
 								<inbound>
