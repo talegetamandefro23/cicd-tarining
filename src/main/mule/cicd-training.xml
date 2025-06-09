@@ -23,5 +23,6 @@ var B = vars.B as Number
 ]]></ee:set-payload>
 			</ee:message>
 		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="da061ca7-6d26-49db-8b71-0850cbda3698" message='#[" Test CICD Process"]'/>
 	</flow>
 </mule>
