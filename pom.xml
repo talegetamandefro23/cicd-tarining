@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>22010d62-efae-4911-82b7-f6d3cdedcbbd</groupId>
-	<artifactId>mulesoft-ci-cd</artifactId>
+	<artifactId>cicd-training</artifactId>
 	<version>1.0.0</version>
 	<packaging>mule-application</packaging>
 
