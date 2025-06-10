@@ -13,7 +13,7 @@ pipeline {
             steps {
                 echo 'Deploying mule project due to the latest code commit…'
                 echo 'Deploying to the configured environment….'
-                bat "mvn clean deploy -DmuleDeploy -DappName=cicd-training -Dusername=Tale -Dpassword=Mule@1234 -DtargetName=Cloudhub-US-East-2 -Denvironment=Sandbox -DmuleVersion=4.6.0"
+                bat "mvn clean deploy -DmuleDeploy -Dmule.app.applicationName=cicd-training -Dusername=Tale -Dpassword=Mule@1234 -DtargetName=Cloudhub-US-East-2 -Denvironment=Sandbox -DmuleVersion=4.6.0"
             }
         }
     }
