@@ -4,7 +4,7 @@
 
 	<groupId>22010d62-efae-4911-82b7-f6d3cdedcbbd</groupId>
 	<artifactId>cicd-training</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 	<packaging>mule-application</packaging>
 
 	<name>cicd-training</name>
