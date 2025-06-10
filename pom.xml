@@ -31,18 +31,18 @@
 			<plugin>
 				<groupId>org.mule.tools.maven</groupId>
 				<artifactId>mule-maven-plugin</artifactId>
-				<version>${mule.maven.plugin.version}</version>
-				<extensions>true</extensions>
+				<version>3.7.1</version>
+  				<extensions>true</extensions>
 				<configuration>
 					<cloudhub2Deployment>
 						<uri>https://anypoint.mulesoft.com</uri>
 						<provider>MC</provider>
-						<environment>${environment}</environment>
-						<target>${targetName}</target>
-						<muleVersion>${muleVersion}</muleVersion>
-						<username>${username}</username>
-						<password>${password}</password>
-						<applicationName>${appName}</applicationName>
+						<environment>Sandbox</environment>
+						<target>Cloudhub-US-East-2</target>
+						<muleVersion>4.6.0</muleVersion>
+						<username>Tale</username>
+						<password>Mule@1234</password>
+						<applicationName>cicd-training</applicationName>
 						<replicas>1</replicas>
 						<vCores>0.1</vCores>
 					</cloudhub2Deployment>
